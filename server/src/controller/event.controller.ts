@@ -33,18 +33,18 @@ export async function updateEventHandler(
 ) {
   const userId = res.locals.user._id;
 
-  const id = req.query.eventId;
+  const id = req.query.id;
   const update = req.body;
 
-  const event = await findEvent({ id });
+  const event = await findEventById({ id });
 
   if (!event) {
     return res.sendStatus(404);
   }
 
-  if (String(event.user) !== userId) {
-    return res.sendStatus(403);
-  }
+  // if (String(event.user) !== userId) {
+  //   return res.sendStatus(403);
+  // }
 
   const updatedEvent = await findAndUpdateEvent({ id }, update, {
     new: true,

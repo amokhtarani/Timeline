@@ -23,12 +23,12 @@ export interface PersonDocument extends PersonInput, mongoose.Document {
     updatedAt: Date;
   }
 var personSchema = new mongoose.Schema({
-      personId: {
-        type: String,
-        required: true,
-        unique: true,
-        default: () => `person_${nanoid()}`,
-      },
+      // personId: {
+      //   type: String,
+      //   required: true,
+      //   unique: true,
+      //   default: () => `person_${nanoid()}`,
+      // },
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         name:{type:String, required:true},
         title:{type:String, required:true},

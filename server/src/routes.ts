@@ -92,7 +92,11 @@ app.get(
   [requireUser],
   getEventHandler
 );
-
+app.put(
+  "/api/events",
+  [requireUser, validateResource(createEventSchema)],
+  updateEventHandler
+);
 // persons
 app.get(
   "/api/persons/persons",
