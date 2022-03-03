@@ -17,6 +17,10 @@ const payload = {
     }),
     comments: string(),
     tag: string(),
+    era: string({
+      required_error: "Era (CE/BCE) is required",
+    }),
+
   }),
 };
 

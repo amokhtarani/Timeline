@@ -48,7 +48,7 @@ export async function createEvent(
     update: UpdateQuery<EventDocument>,
     options: QueryOptions
   ) {
-    return EventModel.findOneAndUpdate(query, update, options);
+    return EventModel.findByIdAndUpdate(query.id, update, options);
   }
   
   export async function deleteEvent(query: FilterQuery<EventDocument>) {

@@ -31,7 +31,6 @@ export async function updateEventHandler(
 //  req: Request<UpdateEventInput["params"]>,
   res: Response
 ) {
-  const userId = res.locals.user._id;
 
   const id = req.query.id;
   const update = req.body;

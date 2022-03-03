@@ -14,6 +14,7 @@ export interface EventInput {
     description: string;
     comments : string,
     tag: string;
+    era: string;  //CE or BCE
 }
 export interface EventDocument extends EventInput, mongoose.Document {
     createdAt: Date;
@@ -22,12 +23,12 @@ export interface EventDocument extends EventInput, mongoose.Document {
 
 const eventSchema = new mongoose.Schema(
     {
-        eventId: {
-            type: String,
-            required: true,
-            unique: true,
-            default: () => `event_${nanoid()}`,
-          },
+        // eventId: {
+        //     type: String,
+        //     required: true,
+        //     unique: true,
+        //     default: () => `event_${nanoid()}`,
+        //   },
       
             user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
             eventTitle:{type:String, required:true},
@@ -37,6 +38,7 @@ const eventSchema = new mongoose.Schema(
             description:{type:String, required:true},
             comments:{type:String, required:false},
             tag:{type:String, required:false},
+            era:{type:String, required:true},
     },
     {timestamps : true}
 );

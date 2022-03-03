@@ -45,11 +45,9 @@ export async function createPerson(
     update: UpdateQuery<PersonDocument>,
     options: QueryOptions
   ) {
-    console.log(JSON.stringify(query));
-    console.log(JSON.stringify(update));
-    console.log(JSON.stringify(options));
- //   return PersonModel.findOneAndUpdate(query, update, options);
-    return PersonModel.findOneAndUpdate(query, update, options);
+    // console.log(JSON.stringify(query));
+    // console.log(JSON.stringify(update));
+     return PersonModel.findByIdAndUpdate(query.id, update, options);
   }
   
   export async function deletePerson(query: FilterQuery<PersonDocument>) {

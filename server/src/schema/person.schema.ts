@@ -24,6 +24,13 @@ const payload = {
       related : string(),
       comments : string(),
       tag: string(),
+      dobera: string({
+        required_error: "DOB Era (CE/BCE) is required",
+      }),
+      dodera: string({
+        required_error: "DOD Era (CE/BCE) is required",
+      }),
+  
     }),
 };
 

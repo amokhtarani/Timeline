@@ -14,11 +14,13 @@ class Item {
     year : string;
     id :string;
     type : string;
-    constructor(title:string, year:string, id: string, type: string) {
+    era: string;
+    constructor(title:string, year:string, id: string, type: string, era: string) {
         this.title = title;
         this.year = year;
         this.id = id;
         this.type = type;
+        this.era = era;
     }
 }
 
@@ -26,13 +28,13 @@ class Item {
 //attributes to display the timeline
 function reduceEvent(e : any) {
     return new Item(e.eventTitle, e.dateOfEvent,
-        e._id, "event");
+        e._id, "event", e.era );
 }
 
 function reducePerson(p : any) {
    // console.log(p);
     return new Item(p.name, p.dateOfBirth,
-        p._id, "person");
+        p._id, "person", p.dobera);
 } 
 
 export async function timelineHandler (

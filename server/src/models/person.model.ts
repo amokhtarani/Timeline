@@ -17,6 +17,9 @@ export interface PersonInput {
   related : string;
   comments : string;
   tag: string;
+  dobera: string;  //CE or BCE
+  dodera: string;  //CE or BCE
+
  }
 export interface PersonDocument extends PersonInput, mongoose.Document {
     createdAt: Date;
@@ -40,6 +43,8 @@ var personSchema = new mongoose.Schema({
         related:{type:String, required:false},
         comments:{type:String, required:false},
         tag:{type:String, required:false},
+        dodera:{type:String, required:true},
+        dobera:{type:String, required:true},
       },
       {timestamps : true}
   );

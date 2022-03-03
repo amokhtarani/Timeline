@@ -33,11 +33,7 @@ export async function updatePersonHandler(
   res: Response
 ) {
   
-   console.log("In updatePersonHandler");
-   console.log(req.query.id);
-  // console.log(req.query.personId);
-  // //const userId = res.locals.user._id;
-
+ 
   const id = req.query.id;
   const update = req.body;
 
@@ -63,8 +59,7 @@ export async function getPersonHandler(
 //  req: Request<UpdatePersonInput["params"]>,
   res: Response
 ) {
-  //console.log("In getPersonHandler: " + JSON.stringify(req.query));
-  let person;
+   let person;
     if(req.query.name) {
   let personName = req.query.name;
   person = await findPersonByName({ personName });
@@ -73,8 +68,7 @@ export async function getPersonHandler(
 if(req.query.id) {
   const id=req.query.id;
    person = await findPersonById({id});
-  console.log('Person controller: ' + person);
-
+  //console.log('Person controller: ' + person);
 }
 if (!person) {
   return res.sendStatus(404);
